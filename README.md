@@ -1,2 +1,1 @@
-# vanilljs-todo
 # vanilllaJS-todo
