@@ -1,32 +1,4 @@
 "use strict";
-// function nextPal(num) {
-//   num += 1;
-//   let reversed = +num.toString().split("").reverse().join("");
-//   if (num === reversed) return num;
-//   else return nextPal(num);
-// }
-
-// console.log(nextPal(41));
-
-// const res = str => str.split("").filter(x => "aeouiy".includes(x)).length
-
-// console.log(res("helloa world"));
-
-// let arr = [10, 2, 3, 4, 5, "helloworld"];
-// let newArr = [1, 2, 34, 4, 5, "helloworld"];
-// let res = [];
-
-// res = arr
-//   .filter((prev) => newArr.includes(prev))
-//   .map((elem) => {
-//     return elem % 5 === 0
-//       ? "FIVE"
-//       : typeof elem === "string" && elem.length > 5
-//       ? "FSTR"
-//       : elem;
-//   });
-
-// console.log(res);
 
 const inputBox = document.querySelector(".inputfield input");
 const addBtn = document.querySelector(".inputfield button");
@@ -36,7 +8,7 @@ let listArr;
 
 inputBox.onkeyup = () => {
   let userData = inputBox.value;
-  return userData !== ""
+  return userData.trim().length !== 0
     ? addBtn.classList.add("active")
     : addBtn.classList.remove("active");
 };
@@ -88,8 +60,3 @@ deleteBtn.onclick = () => {
   localStorage.setItem("New Todo", JSON.stringify(listArr));
   showTask();
 };
-
-// newLiTag += `<li> ${elem} <span onclick="deleteTask(${index})" ><i class="fas fa-trash"></i></span></li>`;
-
-
-
